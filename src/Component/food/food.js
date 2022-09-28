@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import FoodSearch from '../Food-Search/FoodSearch';
 
 const Food = () => {
+    const [foodName, setFoodName] = useState('')
     return (
+      <section>
         <div>
-            <input type="text" />
-            <button type='button'>Search</button>
+          <FoodSearch setFoodName={setFoodName}></FoodSearch>
         </div>
+        <div className='show-food-via-search'>
+            <h1>{foodName}</h1>
+        </div>
+      </section>
     );
 };
 
